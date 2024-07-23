@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  horusec:
+    extends:
+      file: /horusec/compose.yaml
+      service: horusec-cli
+
+  gosec:
+    extends:
+      file: /gosec/compose.yaml
+      service: gosec-scanner
+
+  gitleaks:
+    extends:
+      file: /gitleaks/compose.yaml
+      service: gitleaks
+
+  # insider:
+  #   extends:
+  #     file: /insider/compose.yaml
+  #     service: insider
+
+  semgrep:
+    extends:
+      file: /semgrep/compose.yaml
+      service: semgrep

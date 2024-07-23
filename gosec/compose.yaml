@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  gosec-scanner:
+    image: securego/gosec:latest
+    container_name: gosec
+    privileged: true 
+    volumes:
+      - ../project:/code
+      - ./gosec-reports:/reports
+    command: -exclude G101 -fmt sarif -out /code/results.sarif -quiet /code/...
+

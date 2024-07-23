@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  semgrep:
+    image: returntocorp/semgrep:latest
+    privileged: true 
+    volumes:
+      - ../project:/src 
+    command: semgrep scan --sarif --output=/src/results.sarif .

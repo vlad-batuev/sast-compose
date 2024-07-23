@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  horusec-cli:
+    image: horuszup/horusec-cli:latest
+    privileged: true 
+    volumes:
+      - ../project:/src 
+      - ./config:/config 
+    command: horusec start --project-path=/src -o=sarif -O=/src/results.sarif -D=true --config-file-path=/config/horusec-config.json --ignore=".horusecignore"

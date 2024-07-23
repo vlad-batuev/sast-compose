@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  gitleaks:
+    image: zricethezav/gitleaks
+    volumes:
+      - ../project:/code
+      - ./results:/results
+    command: detect --no-git --source /code --report-format sarif --report-path  /code/results.sarif

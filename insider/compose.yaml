@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  insider:
+    image: insidersec/insider:latest
+    volumes:
+      - ../project:/target-project
+      - ./results:/results
+      # Отдает только json
+    command: -tech javascript -target /target-project -v
+                  # android
+                  # java
+                  # ios
+                  # javascript
+                  # csharp
